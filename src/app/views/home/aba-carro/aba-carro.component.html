@@ -1,0 +1,75 @@
+<div class="main-body">
+  <div class="content-container">
+    <div class="btn-new-car">
+      <button mat-raised-button class="custom-button" (click)="openAddEditCarForm()">
+        Novo carro
+      </button>
+    </div>
+
+    <mat-card>
+      <mat-card-content>
+        <div class="table-container">
+          <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+            <!-- Model Column -->
+            <ng-container matColumnDef="model">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+              <td mat-cell *matCellDef="let row"> {{row.model}} </td>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="color">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Cor </th>
+              <td mat-cell *matCellDef="let row"> {{row.color}} </td>
+            </ng-container>
+
+            <!-- Year Column -->
+            <ng-container matColumnDef="year">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Ano </th>
+              <td mat-cell *matCellDef="let row"> {{row.year}} </td>
+            </ng-container>
+
+            <!-- License Plate Column -->
+            <ng-container matColumnDef="licensePlate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> placa </th>
+              <td mat-cell *matCellDef="let row"> {{row.licensePlate}} </td>
+            </ng-container>
+
+            <!-- Photo Column -->
+            <ng-container matColumnDef="photo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Foto </th>
+              <td mat-cell *matCellDef="let row"> 
+                <img src="{{row.photo !== null ? 'data:image/jpg;base64,' + row.photo : '/assets/images/carro.png'}}" height="50px" width="50px"/>
+              </td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="editarCarro(row)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deletarCarro(row.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+
+        
+      </mat-card-content>
+      <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Selecione à página de Carros"></mat-paginator>
+    </mat-card>
+  </div>
+</div>
