@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "user-car-front": {
+    "desafio-pitang-front": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -77,15 +77,16 @@
             "proxyConfig": "proxy.conf.json",
             "allowedHosts": [
               "localhost",
-              ".ngrok.io"
+              ".ngrok.io",
+              "18.222.72.55"
             ]
           },
           "configurations": {
             "production": {
-              "browserTarget": "user-car-front:build:production"
+              "browserTarget": "DesafioPitangfront:build:production"
             },
             "development": {
-              "browserTarget": "user-car-front:build:development"
+              "browserTarget": "DesafioPitangfront:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "user-car-front:build"
+            "browserTarget": "DesafioPitangfront:build"
           }
         },
         "test": {
