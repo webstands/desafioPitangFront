@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: '/api' // Use o proxy configurado no Vercel
+  api: 'http://18.222.72.55:8081/api'
 };
