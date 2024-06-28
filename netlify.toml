@@ -4,7 +4,7 @@ publish = "dist/desafio-pitang-front"
 
 [[redirects]]
 from = "/api/*"
-to = "http://3.145.176.34:8081/api/:splat"
+to = "http://18.222.121.166:8081/api/:splat"
 status = 200
 force = true
 
