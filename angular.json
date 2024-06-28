@@ -52,8 +52,7 @@
                   "maximumError": "6kb"
                 }
               ],
-              "outputHashing": "all",
-              "proxyConfig": "proxy.prod.json" // Adicione esta linha
+              "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
