@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/:match*", "destination": "https://api.endpoint.url/:match*" }
+    { "source": "/api/:match*", "destination": "http://18.222.72.55:8081/api/:match*" }
 
   ],
   "headers": [
